@@ -1,0 +1,21 @@
+<hello style="text-align: center;" name="{{ name }}"></hello>
+
+<section style="text-align: center;">
+  <div *ngIf="winner">{{ winner }}</div>
+  <div *ngFor="let row of board; let x = index">
+    <button
+      style="height: 50px; width: 50px; color: grey; margin: 1px;"
+      *ngFor="let col of row; let y = index"
+      (click)="onClick(x, y)"
+    >
+      {{ col }}
+    </button>
+  </div>
+  <div>
+    <div style="margin-top: 5px">
+      <button type="button" class="btn btn-danger" (click)="clear()">
+        Clear
+      </button>
+    </div>
+  </div>
+</section>
